@@ -2,27 +2,29 @@
 
 import { motion } from "framer-motion";
 import styles from '../styles';
-import { slideIn, staggerContainer, textVariant } from "../util/motion";
+
 
 const Hero = () => {
   return (
     <section className={`${styles.yPaddings} sm:pl-16 pl-6`}>
-      <motion.div
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once : false, amount: 0.25 }}
-        className={`${styles.innerWidth} mx-auto flex flex-col`}
-      >
+      <div className={`${styles.innerWidth} mx-auto flex flex-col`}>
 
       <div className="flex justify-center items-center flex-col relative z-10">
-        <motion.h1 variants={textVariant(0.5)} className={styles.heroHeading}>
+        <motion.h1
+           initial="hidden"
+           whileInView="visible"
+           viewport={{ once: true, amount : 0.5}}
+           transition={{  type: 'tween', ease: 'easeIn'}}
+           variants={{
+             hidden: { opacity: 0, y: 20},
+             visible: { opacity: 1, y: 0}
+           }}
+          className={styles.heroHeading}>
           PorscheWorld
         </motion.h1>
       </div>
 
-      <motion.div
-        variants={slideIn('right', 'tween', 0.2, 0.5)}
+      <div
         className="relative w-full md:mt-[20px] -mt-[12px]"
       >
         <div className="absolute w-full h-[300px] hero-gradient rounded-tl-[140px] z-[0] -top-[30px]" />
@@ -33,9 +35,9 @@ const Hero = () => {
             </div>
           </a>
 
-      </motion.div>
+      </div>
 
-      </motion.div>
+      </div>
     </section>
   )
 }

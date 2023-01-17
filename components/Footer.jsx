@@ -1,16 +1,12 @@
 'use client';
 
 
-import { motion } from "framer-motion";
 import { socials } from "../constants";
 import styles from '../styles';
-import { footerVariants } from "../util/motion";
 
 const Footer = () => {
   return (
-   <motion.div variants={footerVariants}
-   initial="hidden"
-   whileInView="show"
+   <div
    className={`${styles.paddings} py-8 relative`}
    >
 
@@ -39,7 +35,7 @@ const Footer = () => {
       </div>
     </div>
 
-   </motion.div>
+   </div>
   )
 }
 

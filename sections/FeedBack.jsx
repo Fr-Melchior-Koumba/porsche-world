@@ -1,22 +1,16 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import styles from '../styles';
-import { staggerContainer, fadeIn, zoomIn } from '../util/motion';
-import { TitleText, TypingText } from '../components';
+
 
 const FeedBack = () => {
   return (
     <section className={`${styles.paddings} relative z-10`}>
-      <motion.div 
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: 'false', amount: 0.25 }}
-        className={`${styles.innerWidth} mx-auto flex lg:flex-row flex-col gap-6`}
-      >
+      <div
+           
+        className={`${styles.innerWidth} mx-auto flex lg:flex-row flex-col gap-6`}>
 
-      <motion.div variants={fadeIn('right', 'tween', 0.2, 1)}
+      <div
         className="flex-[0.5] lg:max-w-[370px] flex justify-end flex-col gradient-05 sm:p-8 p-4 rounded-[32px] border-[1px] border-[#6a6a6a] relative"
       >
 
@@ -28,20 +22,20 @@ const FeedBack = () => {
 
           <p className='mt-[24px] font-normal sm:text-[24px] text-[18px] sm:leading-[45px] leading-[39px] text-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
 
-      </motion.div>
+      </div>
 
-      <motion.div variants={fadeIn('left', 'tween', 0.2, 1)}
+      <div
         className='relative flex-1 flex justify-center items-center'>
 
         <img src="/car-11.jpg" alt="car" className='w-full lg:h-[610px] h-auto min-h-[210px] object-cover rounded-[40px]'/>
 
-        <motion.div variants={zoomIn(0.4, 1)}
+        <div
           className='lg:block hidden absolute -left-[10%] top-[3%]'>
           <img src="/stamp.png" alt="stamp" className='w-[155px] h-[155px] object-contain' />
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
 
-      </motion.div>
+      </div>
     </section>
   )
 }

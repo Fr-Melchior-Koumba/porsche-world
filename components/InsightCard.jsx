@@ -1,12 +1,9 @@
 'use client';
 
-import {motion} from 'framer-motion'
-import { fadeIn } from '../util/motion';
 
-
-const InsightCard = ({imgUrl, title, subtitle, index}) => {
+const InsightCard = ({imgUrl, title, subtitle}) => {
   return (
-    <motion.div variants={fadeIn('up', 'spring', index * 0.5, 0.5)}
+    <div
         className="flex md:flex-row flex-col gap-4"
     >
         <img src={imgUrl} alt="cars" className='md:w-[270px] w-full h-[250px] rounded-[32px] object-cover'/>
@@ -20,7 +17,7 @@ const InsightCard = ({imgUrl, title, subtitle, index}) => {
                 <img src="arrow.svg" alt="arrow" className='w-[40%] h-[40%] object-contain' />
             </div>
         </div>
-    </motion.div>
+    </div>
   )
 }
 

@@ -1,21 +1,15 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import styles from '../styles';
-import { staggerContainer} from '../util/motion';
 import { InsightCard, TitleText, TypingText } from '../components';
 import { insights } from '../constants';
 
 const Insights = () => {
   return (
   <section className={`${styles.paddings} relative z-10`}>
-    <motion.div 
-      variants={staggerContainer}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: 'false', amount: 0.25 }}
-      className={`${styles.innerWidth} mx-auto flex flex-col`}
-    >
+    <div 
+      
+      className={`${styles.innerWidth} mx-auto flex flex-col`}>
       <TypingText title="| Tous savoir" textStyles="text-center"/>
       <TitleText title="Tous savoir sur nos sorties." textStyles="text-center"/>
       <div className='mt-[50px] flex flex-col gap-[30px]'>
@@ -23,7 +17,7 @@ const Insights = () => {
           <InsightCard key={`insight-${index}`} {...insight} index={index + 1} />
         ))}
       </div>
-    </motion.div>
+    </div>
   </section>
   )
 }

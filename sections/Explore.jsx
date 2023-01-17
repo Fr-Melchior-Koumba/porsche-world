@@ -1,9 +1,7 @@
 'use client';
 
 import { useState } from "react";
-import { motion } from 'framer-motion';
 import styles from '../styles';
-import { staggerContainer } from "../util/motion";
 import { ExploreCard, TitleText, TypingText } from "../components";
 import { exploreCar } from "../constants";
 
@@ -14,10 +12,8 @@ const Explore = () => {
 
   return (
     <section className={`${styles.paddings} `} id="explore">
-      <motion.div variants={staggerContainer}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: false, amount: 0.25}}
+      <div 
+  
       className={`${styles.innerWidth} mx-auto flex flex-col`}>
         
       <TypingText title="| Le Stock" textStyles="text-center" />
@@ -28,7 +24,7 @@ const Explore = () => {
           <ExploreCard key={car.id} {...car} index={index} active={active} handleClick={setActive} />
         ))}
       </div>
-      </motion.div>
+      </div>
     </section>
   )
 }
